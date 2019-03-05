@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import day08_framework
+import CoreData
 
 class ViewController: UIViewController {
 
+    var articles: [Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print(try! FileManager.default.url(for: .applicationDirectory, in: .userDomainMask, appropriateFor: nil, create: false))
+        print(try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false))
+        do {
+            self.articles = try Article.getAllArticles()
+        }
+        catch { fatalError(error.localizedDescription) }
+        
+        let newArticle = Article.newArticle
+        
+        newArticle.content = "toto"
+        newArticle.creationDate = NSDate.init()
+        newArticle.modificationDate = newArticle.creationDate
+        newArticle.title = "super toto"
+        newArticle.save()
+        print(self.articles)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

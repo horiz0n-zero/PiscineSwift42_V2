@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42D3F21222E74AA00599082 /* day08_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42D3F1E222E747C00599082 /* day08_framework.framework */; };
+		C42D3F22222E74AA00599082 /* day08_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C42D3F1E222E747C00599082 /* day08_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4B94C57222E66F3001B74BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B94C56222E66F3001B74BA /* AppDelegate.swift */; };
 		C4B94C59222E66F4001B74BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B94C58222E66F4001B74BA /* ViewController.swift */; };
 		C4B94C5C222E66F4001B74BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B94C5A222E66F4001B74BA /* Main.storyboard */; };
@@ -14,7 +16,39 @@
 		C4B94C61222E66F4001B74BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B94C5F222E66F4001B74BA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C42D3F1D222E747C00599082 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C42D3F19222E747C00599082 /* day08_framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C4B94C72222E6724001B74BA;
+			remoteInfo = day08_framework;
+		};
+		C42D3F23222E74AA00599082 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C42D3F19222E747C00599082 /* day08_framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C4B94C71222E6724001B74BA;
+			remoteInfo = day08_framework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C42D3F25222E74AA00599082 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C42D3F22222E74AA00599082 /* day08_framework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C42D3F19222E747C00599082 /* day08_framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = day08_framework.xcodeproj; path = ../day08_framework/day08_framework.xcodeproj; sourceTree = "<group>"; };
 		C4B94C53222E66F3001B74BA /* day08.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = day08.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B94C56222E66F3001B74BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B94C58222E66F4001B74BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,15 +63,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42D3F21222E74AA00599082 /* day08_framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C42D3F1A222E747C00599082 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C42D3F1E222E747C00599082 /* day08_framework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C4B94C4A222E66F3001B74BA = {
 			isa = PBXGroup;
 			children = (
+				C42D3F19222E747C00599082 /* day08_framework.xcodeproj */,
 				C4B94C55222E66F3001B74BA /* day08 */,
 				C4B94C54222E66F3001B74BA /* Products */,
 			);
@@ -74,10 +118,12 @@
 				C4B94C4F222E66F3001B74BA /* Sources */,
 				C4B94C50222E66F3001B74BA /* Frameworks */,
 				C4B94C51222E66F3001B74BA /* Resources */,
+				C42D3F25222E74AA00599082 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C42D3F24222E74AA00599082 /* PBXTargetDependency */,
 			);
 			name = day08;
 			productName = day08;
@@ -111,12 +157,28 @@
 			mainGroup = C4B94C4A222E66F3001B74BA;
 			productRefGroup = C4B94C54222E66F3001B74BA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C42D3F1A222E747C00599082 /* Products */;
+					ProjectRef = C42D3F19222E747C00599082 /* day08_framework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C4B94C52222E66F3001B74BA /* day08 */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C42D3F1E222E747C00599082 /* day08_framework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = day08_framework.framework;
+			remoteRef = C42D3F1D222E747C00599082 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C4B94C51222E66F3001B74BA /* Resources */ = {
@@ -142,6 +204,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C42D3F24222E74AA00599082 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = day08_framework;
+			targetProxy = C42D3F23222E74AA00599082 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C4B94C5A222E66F4001B74BA /* Main.storyboard */ = {
@@ -273,6 +343,7 @@
 		C4B94C66222E66F4001B74BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = day08/Info.plist;
@@ -287,6 +358,7 @@
 		C4B94C67222E66F4001B74BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = day08/Info.plist;

@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42D3F17222E717000599082 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42D3F15222E717000599082 /* Article+CoreDataClass.swift */; };
+		C42D3F18222E717000599082 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42D3F16222E717000599082 /* Article+CoreDataProperties.swift */; };
 		C4B94C77222E6724001B74BA /* day08_framework.h in Headers */ = {isa = PBXBuildFile; fileRef = C4B94C75222E6724001B74BA /* day08_framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4B94C81222E6A7A001B74BA /* Article.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B94C7F222E6A7A001B74BA /* Article.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C42D3F15222E717000599082 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C42D3F16222E717000599082 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C4B94C72222E6724001B74BA /* day08_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = day08_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B94C75222E6724001B74BA /* day08_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = day08_framework.h; sourceTree = "<group>"; };
 		C4B94C76222E6724001B74BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4B94C80222E6A7A001B74BA /* Article.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Article.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 		C4B94C74222E6724001B74BA /* day08_framework */ = {
 			isa = PBXGroup;
 			children = (
+				C42D3F15222E717000599082 /* Article+CoreDataClass.swift */,
+				C42D3F16222E717000599082 /* Article+CoreDataProperties.swift */,
+				C4B94C7F222E6A7A001B74BA /* Article.xcdatamodeld */,
 				C4B94C75222E6724001B74BA /* day08_framework.h */,
 				C4B94C76222E6724001B74BA /* Info.plist */,
 			);
@@ -95,6 +104,7 @@
 				TargetAttributes = {
 					C4B94C71222E6724001B74BA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42D3F17222E717000599082 /* Article+CoreDataClass.swift in Sources */,
+				C4B94C81222E6A7A001B74BA /* Article.xcdatamodeld in Sources */,
+				C42D3F18222E717000599082 /* Article+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +266,7 @@
 		C4B94C7B222E6724001B74BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -261,10 +275,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = day08_framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.z-zero.day08-framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -273,6 +289,7 @@
 		C4B94C7C222E6724001B74BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -281,6 +298,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = day08_framework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.z-zero.day08-framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -312,6 +330,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4B94C7F222E6A7A001B74BA /* Article.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4B94C80222E6A7A001B74BA /* Article.xcdatamodel */,
+			);
+			currentVersion = C4B94C80222E6A7A001B74BA /* Article.xcdatamodel */;
+			path = Article.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C4B94C69222E6724001B74BA /* Project object */;
 }
