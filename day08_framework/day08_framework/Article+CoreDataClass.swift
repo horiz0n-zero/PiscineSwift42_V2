@@ -13,34 +13,45 @@ import CoreData
 @objc(Article)
 public class Article: NSManagedObject {
 
-    fileprivate static let objectModel: NSManagedObjectContext = {
-        let momd = Bundle.init(for: Article.self).path(forResource: "Article", ofType: "momd")!
-        let model = NSManagedObjectModel.init(contentsOf: URL.init(string: momd)!)!
-        let psc = NSPersistentStoreCoordinator.init(managedObjectModel: model)
-        let context =  NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
-    
-        context.persistentStoreCoordinator = psc
-        return context
+    fileprivate static var managedObjectContext: NSManagedObjectContext! = {
+        let frameworkBundle = Bundle(for: Article.self)
+        let frameworkDataModel = frameworkBundle.url(forResource: "Article", withExtension: "momd")!
+        let model = NSManagedObjectModel(contentsOf: frameworkDataModel)!
+        let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
+        let objectContext = NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
+        
+        objectContext.persistentStoreCoordinator = psc
+        let document = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask,
+                                                        appropriateFor: nil, create: false)
+        let storeURL = document.appendingPathComponent("article.sqlite")
+            
+        do {
+            try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
+        } catch { fatalError(error.localizedDescription) }
+        return objectContext
     }()
     
-    public func save() {
-        if Article.objectModel.hasChanges {
-            do {
-                try Article.objectModel.save()
-            }
-            catch { fatalError(error.localizedDescription) }
-        }
+    public class func newArticle() -> Article {
+        return NSEntityDescription.insertNewObject(forEntityName: "Article",
+                                                   into: Article.managedObjectContext) as! Article
     }
-    public class func getAllArticles() throws -> [Article] {
-        let request: NSFetchRequest<Article> = Article.fetchRequest()
     
+    public class func getAllArticles() -> [Article] {
         do {
-            return try Article.objectModel.fetch(request)
+            return try managedObjectContext.fetch(Article.fetchRequest())
         }
-        catch { throw error }
+        catch { fatalError(error.localizedDescription) }
     }
-    public class var newArticle: Article {
-        return NSEntityDescription.insertNewObject(forEntityName: "Article", into: Article.objectModel) as! Article
+    
+    public class func removeArticle(article : Article) {
+        Article.managedObjectContext.delete(article)
+    }
+    
+    public class func save() {
+        do {
+            try Article.managedObjectContext.save()
+        }
+        catch { fatalError(error.localizedDescription) }
     }
     
 }

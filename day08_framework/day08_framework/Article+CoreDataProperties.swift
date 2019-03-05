@@ -17,10 +17,9 @@ extension Article {
         return NSFetchRequest<Article>(entityName: "Article")
     }
 
+    @NSManaged public var title: String?
     @NSManaged public var content: String?
     @NSManaged public var creationDate: NSDate?
     @NSManaged public var image: NSData?
-    @NSManaged public var modificationDate: NSDate?
-    @NSManaged public var title: String?
 
 }

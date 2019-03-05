@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88C9B39D222EE652002C8626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4785497222EC8AD003ADF50 /* Assets.xcassets */; };
+		88C9B3A0222EE6C3002C8626 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C9B39E222EE6C3002C8626 /* ArticleTableViewCell.swift */; };
+		88C9B3A9222F0171002C8626 /* day08_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C9B3A8222F0168002C8626 /* day08_framework.framework */; };
+		88C9B3AA222F0171002C8626 /* day08_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 88C9B3A8222F0168002C8626 /* day08_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4785491222EC8AD003ADF50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4785490222EC8AD003ADF50 /* AppDelegate.swift */; };
 		C4785493222EC8AD003ADF50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4785492222EC8AD003ADF50 /* ViewController.swift */; };
 		C4785496222EC8AD003ADF50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4785494222EC8AD003ADF50 /* Main.storyboard */; };
@@ -19,6 +23,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		88C9B3A7222F0168002C8626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88C9B3A3222F0168002C8626 /* day08_framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C4B94C72222E6724001B74BA;
+			remoteInfo = day08_framework;
+		};
+		88C9B3AB222F0171002C8626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88C9B3A3222F0168002C8626 /* day08_framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C4B94C71222E6724001B74BA;
+			remoteInfo = day08_framework;
+		};
 		C47854B1222EC902003ADF50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4785485222EC8AD003ADF50 /* Project object */;
@@ -29,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		88C9B3AD222F0171002C8626 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				88C9B3AA222F0171002C8626 /* day08_framework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C47854B7222EC902003ADF50 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		88C9B39E222EE6C3002C8626 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		88C9B3A3222F0168002C8626 /* day08_framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = day08_framework.xcodeproj; path = ../day08_framework/day08_framework.xcodeproj; sourceTree = "<group>"; };
 		C478548D222EC8AD003ADF50 /* day09.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = day09.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4785490222EC8AD003ADF50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4785492222EC8AD003ADF50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C9B3A9222F0171002C8626 /* day08_framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +108,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88C9B3A4222F0168002C8626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88C9B3A8222F0168002C8626 /* day08_framework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C4785484222EC8AD003ADF50 = {
 			isa = PBXGroup;
 			children = (
+				88C9B3A3222F0168002C8626 /* day08_framework.xcodeproj */,
 				C478548F222EC8AD003ADF50 /* day09 */,
 				C47854AA222EC902003ADF50 /* todayExtension */,
 				C47854A7222EC902003ADF50 /* Frameworks */,
@@ -120,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C47854AB222EC902003ADF50 /* TodayViewController.swift */,
+				88C9B39E222EE6C3002C8626 /* ArticleTableViewCell.swift */,
 				C47854AD222EC902003ADF50 /* MainInterface.storyboard */,
 				C47854B0222EC902003ADF50 /* Info.plist */,
 			);
@@ -137,11 +179,13 @@
 				C478548A222EC8AD003ADF50 /* Frameworks */,
 				C478548B222EC8AD003ADF50 /* Resources */,
 				C47854B7222EC902003ADF50 /* Embed App Extensions */,
+				88C9B3AD222F0171002C8626 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C47854B2222EC902003ADF50 /* PBXTargetDependency */,
+				88C9B3AC222F0171002C8626 /* PBXTargetDependency */,
 			);
 			name = day09;
 			productName = day09;
@@ -196,6 +240,12 @@
 			mainGroup = C4785484222EC8AD003ADF50;
 			productRefGroup = C478548E222EC8AD003ADF50 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 88C9B3A4222F0168002C8626 /* Products */;
+					ProjectRef = 88C9B3A3222F0168002C8626 /* day08_framework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C478548C222EC8AD003ADF50 /* day09 */,
@@ -203,6 +253,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		88C9B3A8222F0168002C8626 /* day08_framework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = day08_framework.framework;
+			remoteRef = 88C9B3A7222F0168002C8626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C478548B222EC8AD003ADF50 /* Resources */ = {
@@ -219,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C9B39D222EE652002C8626 /* Assets.xcassets in Resources */,
 				C47854AF222EC902003ADF50 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C9B3A0222EE6C3002C8626 /* ArticleTableViewCell.swift in Sources */,
 				C47854AC222EC902003ADF50 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +308,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		88C9B3AC222F0171002C8626 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = day08_framework;
+			targetProxy = 88C9B3AB222F0171002C8626 /* PBXContainerItemProxy */;
+		};
 		C47854B2222EC902003ADF50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C47854A5222EC902003ADF50 /* todayExtension */;
