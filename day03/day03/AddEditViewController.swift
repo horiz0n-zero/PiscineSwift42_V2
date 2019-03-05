@@ -47,8 +47,14 @@ class AddEditViewController: UIViewController {
             note.updated = Date.init()
         }
         else {
-            note = Note.init(title: self.titleTextField.text! == "" ? "???" : self.titleTextField.text!,
-                             description: self.descriptionTextView.text == "" ? "???" : self.descriptionTextView.text)
+            if self.titleTextField.text == "" || self.descriptionTextView.text == "" {
+                let alert = UIAlertController.init(title: "Erreur", message: "Contenue manquant", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+                return self.present(alert, animated: true, completion: nil)
+            }
+            note = Note.init(title: self.titleTextField.text!,
+                             description: self.descriptionTextView.text)
         }
         
         ViewController.shared.receiveNote(note: note)
