@@ -20,6 +20,7 @@
 		C47854AC222EC902003ADF50 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47854AB222EC902003ADF50 /* TodayViewController.swift */; };
 		C47854AF222EC902003ADF50 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47854AD222EC902003ADF50 /* MainInterface.storyboard */; };
 		C47854B3222EC902003ADF50 /* todayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C47854A6222EC902003ADF50 /* todayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C48C2E62222FCCBC00F01612 /* day08_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C9B3A8222F0168002C8626 /* day08_framework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48C2E62222FCCBC00F01612 /* day08_framework.framework in Frameworks */,
 				C47854A9222EC902003ADF50 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
