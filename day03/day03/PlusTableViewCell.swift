@@ -14,7 +14,8 @@ class PlusTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.plusLabel.layer.cornerRadius = 8
+        self.contentView.layer.borderWidth = 1
+        self.contentView.layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
     }
 
 }

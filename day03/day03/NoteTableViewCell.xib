@@ -59,6 +59,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="KGe-Aj-Y3m" secondAttribute="trailing" constant="8" id="wmv-WR-VTh"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.0" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="Juv-bN-P51" id="fZM-Ha-F4S"/>

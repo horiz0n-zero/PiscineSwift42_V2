@@ -14,6 +14,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var datePicker: UIDatePicker!
     
     var currentNote: Note? = nil
     
@@ -28,6 +29,13 @@ class AddEditViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = self.titleTextField.backgroundColor?.cgColor
         }
+        titleTextField.layer.cornerRadius = 8
+        titleTextField.layer.borderWidth = 1
+        titleTextField.layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
+        descriptionTextView.layer.cornerRadius = 8
+        descriptionTextView.layer.borderWidth = 1
+        descriptionTextView.layer.borderColor = UIColor.red.withAlphaComponent(0.3).cgColor
+        self.datePicker.setValue(self.titleTextField.backgroundColor!, forKey: "textColor")
         guard let note = self.currentNote else {
             return
         }
@@ -51,6 +59,7 @@ class AddEditViewController: UIViewController {
                 let alert = UIAlertController.init(title: "Erreur", message: "Contenue manquant", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+                alert.addTextField(configurationHandler: nil)
                 return self.present(alert, animated: true, completion: nil)
             }
             note = Note.init(title: self.titleTextField.text!,
