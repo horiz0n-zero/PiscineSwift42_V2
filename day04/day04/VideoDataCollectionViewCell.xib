@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,43 +20,29 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2c4-Wv-b5d">
-                        <rect key="frame" x="0.0" y="0.0" width="253" height="142.5"/>
+                        <rect key="frame" x="4" y="4" width="245" height="138.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="2c4-Wv-b5d" secondAttribute="height" multiplier="16:9" id="R6o-Rk-CaQ"/>
                         </constraints>
                     </imageView>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uvT-sM-kXi">
-                        <rect key="frame" x="116.5" y="61.5" width="20" height="20"/>
-                    </activityIndicatorView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FOI-3t-2WB">
                         <rect key="frame" x="8" y="150.5" width="237" height="86.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhf-5D-MOc">
-                                <rect key="frame" x="0.0" y="0.0" width="237" height="44.5"/>
+                                <rect key="frame" x="0.0" y="0.5" width="237" height="86.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-wk-PMR">
-                                <rect key="frame" x="0.0" y="44.5" width="237" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zlF-rT-aaX">
-                                <rect key="frame" x="0.0" y="83" width="237" height="3.5"/>
-                            </progressView>
                         </subviews>
                     </stackView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="uvT-sM-kXi" firstAttribute="centerX" secondItem="2c4-Wv-b5d" secondAttribute="centerX" id="02K-k6-ySK"/>
-                <constraint firstItem="2c4-Wv-b5d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2Di-7d-oQA"/>
+                <constraint firstItem="2c4-Wv-b5d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="2Di-7d-oQA"/>
                 <constraint firstAttribute="trailing" secondItem="FOI-3t-2WB" secondAttribute="trailing" constant="8" id="351-tw-D23"/>
-                <constraint firstAttribute="trailing" secondItem="2c4-Wv-b5d" secondAttribute="trailing" id="4MZ-dq-AqP"/>
-                <constraint firstItem="2c4-Wv-b5d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="geM-ws-xsh"/>
-                <constraint firstItem="uvT-sM-kXi" firstAttribute="centerY" secondItem="2c4-Wv-b5d" secondAttribute="centerY" id="hRk-GC-3Ps"/>
+                <constraint firstAttribute="trailing" secondItem="2c4-Wv-b5d" secondAttribute="trailing" constant="4" id="4MZ-dq-AqP"/>
+                <constraint firstItem="2c4-Wv-b5d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="geM-ws-xsh"/>
                 <constraint firstItem="FOI-3t-2WB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="phd-HU-7DP"/>
                 <constraint firstAttribute="bottom" secondItem="FOI-3t-2WB" secondAttribute="bottom" constant="16" id="tlh-n3-wgO"/>
                 <constraint firstItem="FOI-3t-2WB" firstAttribute="top" secondItem="2c4-Wv-b5d" secondAttribute="bottom" constant="8" id="xMK-RV-MlD"/>
@@ -65,10 +50,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="253" height="173"/>
             <connections>
-                <outlet property="imageProgress" destination="uvT-sM-kXi" id="WyK-7I-kQa"/>
                 <outlet property="imageView" destination="2c4-Wv-b5d" id="Fqt-mX-3g3"/>
-                <outlet property="percentLabel" destination="zaJ-wk-PMR" id="nGN-NE-1X8"/>
-                <outlet property="percentProgress" destination="zlF-rT-aaX" id="rur-Uv-g5K"/>
                 <outlet property="titleLabel" destination="Hhf-5D-MOc" id="ch9-2O-Hkt"/>
             </connections>
             <point key="canvasLocation" x="284.5" y="165.5"/>

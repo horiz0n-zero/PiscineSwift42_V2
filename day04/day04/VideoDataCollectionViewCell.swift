@@ -13,23 +13,19 @@ class VideoDataCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var percentLabel: UILabel!
-    @IBOutlet var percentProgress: UIProgressView!
-    @IBOutlet var imageProgress: UIActivityIndicatorView!
     var player: AVPlayerLayer!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.layer.cornerRadius = 4
         self.contentView.layer.borderWidth = 1
-        self.contentView.layer.borderColor = UIColor.black.cgColor
-        self.contentView.layer.shadowOffset = .init(width: 0, height: 4)
-        self.contentView.layer.shadowColor = UIColor.black.cgColor
-        self.contentView.layer.shadowRadius = 4
-        self.contentView.layer.shadowOpacity = 0.5
-        self.imageProgress.startAnimating()
-        self.imageProgress.hidesWhenStopped = true
-        self.percentProgress.tintColor = UIColor.red
+        self.contentView.layer.borderColor = UIColor.blue.withAlphaComponent(0.5).cgColor
+        self.imageView.layer.cornerRadius = 4
+        self.imageView.layer.masksToBounds = true
+        self.titleLabel.layer.shadowColor = UIColor.blue.cgColor
+        self.titleLabel.layer.shadowOffset = .init(width: 0, height: 0.5)
+        self.titleLabel.layer.shadowRadius = 0.5
+        self.titleLabel.layer.shadowOpacity = 0.5
         self.addObserver(self, forKeyPath: #keyPath(VideoDataCollectionViewCell.imageView.bounds), options: [.new], context: nil)
     }
     deinit {

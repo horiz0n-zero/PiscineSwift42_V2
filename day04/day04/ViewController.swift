@@ -82,10 +82,6 @@ class ViewController: UIViewController, UICollectionViewDataSource {
             let indexPath = IndexPath.init(row: index, section: 0)
             
             if FileManager.default.fileExists(atPath: fileLocation.path) {
-                if let cell = self.collectionView.cellForItem(at: indexPath) as? VideoDataCollectionViewCell {
-                    cell.percentProgress.tintColor = UIColor.green
-                    cell.percentProgress.setProgress(1, animated: true)
-                }
                 continue
             }
             var request = URLRequest.init(url: URL.init(string: videoData.video)!)
@@ -98,19 +94,11 @@ class ViewController: UIViewController, UICollectionViewDataSource {
                 else if let url = url {
                     do {
                         try FileManager.default.moveItem(at: url, to: fileLocation)
-                        DispatchQueue.main.async {
-                            if let cell = self.collectionView.cellForItem(at: indexPath) as? VideoDataCollectionViewCell {
-                                cell.percentProgress.tintColor = UIColor.green
-                                cell.percentProgress.setProgress(1, animated: true)
-                            }
-                        }
                     }
                     catch { errors.append(error) }
                 }
             })
             task.resume()
-            // task.progress.addObserver(<#T##observer: NSObject##NSObject#>, forKeyPath: <#T##String#>, options: <#T##NSKeyValueObservingOptions#>, context: <#T##UnsafeMutableRawPointer?#>)
-            // observer on video progress seem to be a bad idea.
         }
         if errors.count > 0 {
             func showError() {
@@ -154,7 +142,6 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         cell.titleLabel.text = videosData[indexPath.row].name
         if let image = self.images[indexPath.row] {
             cell.imageView.image = image
-            cell.imageProgress.stopAnimating()
         }
         return cell
     }
@@ -165,16 +152,19 @@ import AVFoundation
 extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if let cell = collectionView.cellForItem(at: indexPath) as? VideoDataCollectionViewCell {
-            if cell.percentProgress.tintColor == UIColor.green, cell.player == nil { // || if fileExist
+            let path = self.document.appendingPathComponent(videosData[indexPath.row].videoDocumentFileName)
+            
+            if FileManager.default.fileExists(atPath: path.path), cell.player == nil { // || if fileExist
                 cell.player = AVPlayerLayer.init()
-                cell.player.player = AVPlayer.init(url: self.document.appendingPathComponent(videosData[indexPath.row].videoDocumentFileName))
+                cell.player.player = AVPlayer.init(url: path)
                 cell.player.videoGravity = .resize
                 cell.player.frame = cell.imageView.bounds
                 cell.imageView.layer.addSublayer(cell.player)
                 cell.player.player?.play()
             }
-            else if cell.percentProgress.tintColor == UIColor.red {
+            else if cell.player == nil {
                 let alert = UIAlertController.init(title: "Erreur", message: videosData[indexPath.row].name + " n'est pas encore telecharger", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
